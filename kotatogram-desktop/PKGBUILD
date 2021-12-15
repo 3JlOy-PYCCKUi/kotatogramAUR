@@ -162,7 +162,7 @@ build() {
         -DTG_OWT_BUILD_AUDIO_BACKENDS=OFF \
         -DBUILD_SHARED_LIBS=OFF
 
-    cmake --build build
+    cmake --build build -j$(nproc)
 
     cd "${srcdir}/${pkgname}"
     cmake . \
@@ -173,7 +173,7 @@ build() {
         -Dtg_owt_DIR="${srcdir}/${pkgname}-tg_owt/build" \
         -DTDESKTOP_API_TEST=ON
 
-    cmake --build build
+    cmake --build build -j$(nproc)
 }
 
 package() {
