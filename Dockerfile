@@ -2,7 +2,7 @@ FROM archlinux
 
 RUN pacman -Syu --noconfirm
 RUN pacman -S --noconfirm reflector
-RUN reflector --verbose --latest 50 --sort rate --save /etc/pacman.d/mirrorlist
+RUN reflector --verbose --protocol "https,http,ftp" --latest 50 --sort rate --save /etc/pacman.d/mirrorlist
 RUN pacman -S --noconfirm base-devel pacman-contrib git sudo
 
 RUN sed -i '/MAKEFLAGS=/s/^#//g' /etc/makepkg.conf
