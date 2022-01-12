@@ -3,7 +3,7 @@
 # Contributor: Ilya Fedin <fedin-ilja2010@ya.ru>
 # Contributor: Auteiy <dmitry@auteiy.me>
 
-options=(!lto)
+options=(lto)
 pkgname=kotatogram-desktop
 pkgver=1.4.8
 pkgrel=2
